@@ -1,0 +1,32 @@
+### shows full folder tree
+GET http://localhost:8000/api/v2/folders
+
+### Create root folder
+POST http://localhost:8000/api/v2/folders
+Content-Type: application/json
+
+{
+  "name": "Root"
+}
+
+### Create nested folder for parentID select id of parent for which you want to create a child
+POST http://localhost:8000/api/v2/folders
+Content-Type: application/json
+
+{
+  "name": "Root",
+  "parentId": "root"
+}
+
+### Rename folder by entering folder id  folder id
+PATCH http://localhost:8000/api/v2/folders/11623429-16b0-4da9-b204-73b22b7cea4c
+Content-Type: application/json
+
+{
+  "name": "first child"
+}
+
+
+### Delete folder
+DELETE http://localhost:8000/api/v2/folders/folder-4
+
